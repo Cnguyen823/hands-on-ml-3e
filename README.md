@@ -73,6 +73,28 @@ nbstripout --install
 
 ---
 
+## 🤖 Automated Notebook Execution (GitHub Actions)
+
+This repository uses a GitHub Actions workflow to automatically run all Jupyter notebooks on every push or pull request.  
+
+### Purpose
+- Ensures notebooks run without errors.
+- Verifies dependencies in `requirements.txt`.
+- Helps maintain reproducibility and clean commits.
+
+### Workflow Details
+- Triggered on **push** to `main` and on **pull requests**.
+- Runs on **Ubuntu 22.04** with **Python 3.10**.
+- Installs dependencies and executes all notebooks in-place.
+- Fails the workflow if any notebook has errors, giving immediate feedback.
+
+### Benefits
+- Detect errors before collaborators or CI/CD pipelines encounter them.
+- Keeps notebooks reproducible without committing outputs (thanks to `nbstripout`).
+- Lightweight and automated check for all chapters and experiments.
+
+---
+
 ## 📊 Progress Tracker
 - [ ] Chapter 1 — The ML Landscape
 - [ ] Chapter 2 — End-to-End ML Project
